@@ -1,11 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  font-family: sans-serif;
+  font-family: monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #counter {
   display: flex;
-  width: 100%;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #counterDisplay {
@@ -14,17 +24,32 @@ body {
   color: white;
 }
 
+#counterControls {
+  display: grid;
+  grid-template-areas:
+    'add sub'
+    'reset reset';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
 #counter button {
   border: 0;
   padding: 1rem;
   font-size: 2rem;
-  cursor: pointer;
 }
 
 #counterAdd {
   background-color: chartreuse;
+  grid-area: add;
 }
 
 #counterSub {
   background-color: brown;
+  grid-area: sub;
+}
+
+#counterReset {
+  background-color: gray;
+  grid-area: reset;
 }
